@@ -1,7 +1,7 @@
 # Shallow water application
 
 
-This is a copy of the [ShallowWater](https://github.com/KratosMultiphysics/Kratos/tree/master/applications/ShallowWaterApplication) application from the Kratos reposiroty in the moment of the thesis deposit. Use this version to reproduce the exaples from the thesis.
+This is a copy of the [ShallowWater](https://github.com/KratosMultiphysics/Kratos/tree/master/applications/ShallowWaterApplication) application from the Kratos repository at the moment of the thesis deposit. Use this version to reproduce the examples from the thesis.
 
 ## Overview
 

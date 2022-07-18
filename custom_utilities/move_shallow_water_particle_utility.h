@@ -84,7 +84,7 @@ public:
     {
         KRATOS_TRY
 
-        std::cout << "Initializing moveparticle utility for scalar transport" << std::endl;
+        KRATOS_INFO("MoveParticle") << "Initializing moveparticle utility for scalar transport" << std::endl;
 
         Parameters default_parameters( R"(
             {
@@ -120,7 +120,7 @@ public:
         int particle_id=0;
         mNElems = mrModelPart.Elements().size();
 
-        std::cout << "  about to resize vectors" << std::endl;
+        KRATOS_INFO("MoveParticle") << "  about to resize vectors" << std::endl;
 
         //setting the right size to the vector containing the particles assigned to each element
         //particles vector. this vector contains ALL the particles in the simulation.
@@ -139,7 +139,7 @@ public:
         //int artz;
         //std::cin >> artz;
         int i_int=0; //careful! it's not the id, but the position inside the array!
-        std::cout << "  about to create particles" << std::endl;
+        KRATOS_INFO("MoveParticle") << "  about to create particles" << std::endl;
         //now we seed: LOOP IN ELEMENTS
         //using loop index, DO NOT parallelize this!
         mOffset=0;
@@ -182,7 +182,7 @@ public:
         }
 
         mNParticles=particle_id; //we save the last particle created as the total number of particles we have. For the moment this is true.
-        std::cout << "  [Creating particles : " << mNParticles << " particles created]" << std::endl;
+        KRATOS_INFO("MoveParticle") << "  [Creating particles : " << mNParticles << " particles created]" << std::endl;
 
         mParticlePrintingToolInitialized=false;
 
@@ -209,7 +209,7 @@ public:
         paux.swap(mpBinsObjectDynamic);
         //BinsObjectDynamic<Configure>  mpBinsObjectDynamic(it_begin, it_end );
 
-        std::cout << "  finished mounting Bins" << std::endl;
+        KRATOS_INFO("MoveParticle") << "  finished mounting Bins" << std::endl;
 
         KRATOS_CATCH("")
     }
@@ -361,7 +361,7 @@ public:
             mNumOfParticlesInElems[ii] = 0;
         });
 
-        std::cout << "convecting particles" << std::endl;
+        KRATOS_INFO("MoveParticle") << "convecting particles" << std::endl;
         //We move the particles across the fixed mesh and saving change data into them (using the function MoveParticle)
 
         #pragma omp barrier
@@ -444,7 +444,7 @@ public:
 
         const double threshold = 1e-10 / (static_cast<double>(TDim)+1.0);
 
-        std::cout << "projecting info to mesh" << std::endl;
+        KRATOS_INFO("MoveParticle") << "projecting info to mesh" << std::endl;
 
         const int offset = mOffset;
         // the array of pointers for each element has twice the required size so that

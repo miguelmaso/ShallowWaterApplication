@@ -24,6 +24,7 @@ from shallow_water_test_factory import TestMeshMovingStrategy
 from processes_tests.test_line_graph_output_process import TestLineGraphOutputProcess
 from processes_tests.test_derivatives_recovery_process import TestDerivativesRecoveryProcess
 from processes_tests.test_wave_generator_process import TestWaveGeneratorProcess
+from utilities_tests.test_move_shallow_water_particle_utility import TestMoveShallowWaterParticleUtility
 
 def AssembleTestSuites():
     ''' Populates the test suites to run.
@@ -56,6 +57,7 @@ def AssembleTestSuites():
     smallSuite.addTests(TestLoader().loadTestsFromTestCase(TestLineGraphOutputProcess))
     smallSuite.addTests(TestLoader().loadTestsFromTestCase(TestDerivativesRecoveryProcess))
     smallSuite.addTests(TestLoader().loadTestsFromTestCase(TestWaveGeneratorProcess))
+    smallSuite.addTests(TestLoader().loadTestsFromTestCase(TestMoveShallowWaterParticleUtility))
 
     # Create a test suit with the selected tests plus all small tests
     nightlySuite = suites['nightly']
